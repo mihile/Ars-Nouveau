@@ -520,7 +520,7 @@
   "ars_nouveau.dominion_wand.position_set": "위치 지정됨.",
   "ars_nouveau.dominion_wand.position_stored": "지정된 위치: %s",
   "ars_nouveau.dominion_wand.stored_entity": "지정된 개체",
-  "ars_nouveau.dominion_wand.strict": "Strict Mode",
+  "ars_nouveau.dominion_wand.strict": "제한 모드",
   "ars_nouveau.drygmy.blacklist": "드리그미 블랙리스트",
   "ars_nouveau.drygmy.only_use_jars": "뭔가 들어있는 유리 단지만 사용",
   "ars_nouveau.dynamic_lights.button_off": "동적 조명 꺼짐.",
