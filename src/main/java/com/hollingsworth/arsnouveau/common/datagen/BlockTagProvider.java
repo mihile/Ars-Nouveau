@@ -24,6 +24,7 @@ public class BlockTagProvider extends IntrinsicHolderTagsProvider<Block> {
     public static TagKey<Block> SUMMON_BED = BlockTags.create(ArsNouveau.prefix( "summon_bed"));
     public static TagKey<Block> SUMMON_SLEEPABLE = BlockTags.create(ArsNouveau.prefix( "summon_sleepable"));
     public static TagKey<Block> DECORATIVE_AN = BlockTags.create(ArsNouveau.prefix( "an_decorative"));
+    public static TagKey<Block> FALSE_OCCLUSION = BlockTags.create(ArsNouveau.prefix( "an_false_occlusion"));
     public static TagKey<Block> MAGIC_SAPLINGS = BlockTags.create(ArsNouveau.prefix( "magic_saplings"));
     public static TagKey<Block> MAGIC_PLANTS = BlockTags.create(ArsNouveau.prefix( "magic_plants"));
     public static TagKey<Block> HARVEST_FOLIAGE = BlockTags.create(ArsNouveau.prefix( "harvest/foliage"));
@@ -47,6 +48,7 @@ public class BlockTagProvider extends IntrinsicHolderTagsProvider<Block> {
     public static TagKey<Block> BUSHES = BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "bushes"));
     public static TagKey<Block> STORAGE_GEMS = BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/source_gem"));
     public static TagKey<Block> STORAGE_MAGEBLOOM = BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/mage_bloom"));
+    public static TagKey<Block> LECTERN_BLACKLIST = BlockTags.create(ArsNouveau.prefix("lectern_blacklist"));
 
     public static TagKey<Block> SPRING_CROPS = BlockTags.create(ResourceLocation.fromNamespaceAndPath("sereneseasons", "spring_crops"));
     public static TagKey<Block> SUMMER_CROPS = BlockTags.create(ResourceLocation.fromNamespaceAndPath("sereneseasons", "summer_crops"));
@@ -61,6 +63,7 @@ public class BlockTagProvider extends IntrinsicHolderTagsProvider<Block> {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(INTERACT_BLACKLIST);
+        this.tag(LECTERN_BLACKLIST);
         this.tag(BlockTags.FIRE).add(BlockRegistry.MAGIC_FIRE.get());
         this.tag(OCCLUDES_SPELL_SENSOR).add(BlockRegistry.MAGEBLOOM_BLOCK.get());
         this.tag(RELOCATION_NOT_SUPPORTED);
@@ -159,7 +162,9 @@ public class BlockTagProvider extends IntrinsicHolderTagsProvider<Block> {
             this.tag(BlockTags.SLABS).add(slab);
         }
 
-        this.tag(DECORATIVE_AN).add(BlockRegistry.FALSE_WEAVE.get(), BlockRegistry.MIRROR_WEAVE.get(), BlockRegistry.GHOST_WEAVE.get(), BlockRegistry.MAGEBLOOM_BLOCK.get());
+        this.tag(DECORATIVE_AN).add(BlockRegistry.FALSE_WEAVE.get(), BlockRegistry.MIRROR_WEAVE.get(), BlockRegistry.GHOST_WEAVE.get(), BlockRegistry.SKY_WEAVE.get(), BlockRegistry.MAGEBLOOM_BLOCK.get());
+        this.tag(FALSE_OCCLUSION).add(BlockRegistry.FALSE_WEAVE.get(), BlockRegistry.MIRROR_WEAVE.get(), BlockRegistry.GHOST_WEAVE.get(), BlockRegistry.SKY_WEAVE.get());
+
 
         this.tag(HARVEST_FOLIAGE).addTag(BlockTags.LEAVES).add(
                 Blocks.BROWN_MUSHROOM_BLOCK,
